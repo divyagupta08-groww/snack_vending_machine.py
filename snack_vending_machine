@@ -1,0 +1,31 @@
+def calculator_change(price,paid):
+    change = price-paid
+    return change
+snack_price = 15
+print("snack vending machine")
+print(f"this snack costs {snack_price}\n")
+print("accepted coins 1,2,5,10 \n")
+total_inserted = 0 
+coins_inserted = 0
+while True:
+    coin=(int(input("insert a coin")))
+    if coin != 1 and coin!= 2 and coin != 5 and coin != 10:
+        print("invalid input try again ):")
+        continue 
+    total_inserted += coin
+    coins_inserted += 1
+    print(f"inserted_coin {coin} total so far {total_inserted}")
+    if total_inserted>= snack_price:
+        print("enough money inserted")
+        break
+change_due = calculator_change(snack_price,total_inserted)
+print("giving your snack")
+if change_due==0:
+    pass
+else:
+    print(f"HERE IS YOUR CHANGE {change_due}")
+print("snack price" , snack_price)
+print("total price", total_inserted)
+print("coins inserted", coins_inserted)
+print("change given", change_due)
+print("bye")
